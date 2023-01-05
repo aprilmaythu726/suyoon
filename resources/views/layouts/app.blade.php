@@ -13,14 +13,12 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+     <link href="{{ asset('main.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    Laravel 8 User Roles and Permissions - ItSolutionStuff.com
-                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -33,12 +31,14 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
-                        @guest
+                        {{-- @guest --}}
                             <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
                             <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
-                        @else
+                        {{-- @else
                             <li><a class="nav-link" href="{{ route('users.index') }}">Manage Users</a></li>
+                            @can('role-create')
                             <li><a class="nav-link" href="{{ route('roles.index') }}">Manage Role</a></li>
+                            @endcan
                             <li><a class="nav-link" href="{{ route('products.index') }}">Manage Product</a></li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -47,7 +47,7 @@
 
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                    <a class="dropdown-item" href="{{ route('login') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
@@ -59,7 +59,7 @@
                                     </form>
                                 </div>
                             </li>
-                        @endguest
+                        @endguest --}}
                     </ul>
                 </div>
             </div>

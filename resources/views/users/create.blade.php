@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 
 @section('content')
@@ -65,6 +65,4 @@
 </div>
 {!! Form::close() !!}
 
-
-<p class="text-center text-primary"><small>Tutorial by ItSolutionStuff.com</small></p>
 @endsection
